@@ -1,0 +1,35 @@
+#ifndef ADMINISTRATOR_H
+#define ADMINISTRATOR_H
+
+#include "SalariedEmployee.h"
+
+class Administrator:public SalariedEmployee
+{
+  public:
+	
+	//Constructors
+	Administrator();
+	Administrator(string name, string SSN, double salary, string title, double bonus);
+
+	//Mutators
+	void set_title(string new_title);
+	void set_bonus(double new_bonus);
+
+	//Accessors
+	string get_title() const;
+	double get_bonus() const;
+
+	//Virtual Functions
+	virtual double get_net_pay() const;
+    virtual void print_check() const;
+	virtual istream& promptInput(istream& in, ostream& out);
+
+
+  private: 
+	string title;
+	double bonus;
+
+
+};
+
+#endif
